@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
 const FormData = require('form-data');
+const serverless = require("serverless-http"); // penting!
 
 const app = express();
 
