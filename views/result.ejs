@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hasil Proses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white text-center">
+            <h4>Hasil Gambar Tanpa Background</h4>
+        </div>
+        <div class="card-body text-center">
+            <% if (files.length > 1) { %>
+            <div class="mb-4">
+                <a href="/download_all" class="btn btn-primary">Download Semua Gambar (ZIP)</a>
+            </div>
+            <% } %>
+
+            <% files.forEach(file => { %>
+                <div class="mb-5">
+                    <p><strong><%= file.original %></strong></p>
+                    <img src="/uploads/<%= file.result %>" class="img-thumbnail" style="max-width: 300px;" />
+                    <div class="mt-2">
+                        <a href="/download/<%= file.result %>" class="btn btn-outline-primary">Download</a>
+                    </div>
+                </div>
+            <% }); %>
+            <a href="/" class="btn btn-secondary">Kembali ke Upload</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
